@@ -132,5 +132,5 @@ abbrlink:
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/yourusername/yourusername.github.io.git
+  repo: https://github.com/onism-tans/onism-tans.github.io.git
   branch: main
