@@ -16,12 +16,6 @@ jobs:
       with:
         fetch-depth: 0
         
-    - name: Install Butterfly Theme
-      run: |
-        if [ ! -d "themes/butterfly" ]; then
-          git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly
-        fi
-        
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
