@@ -1,0 +1,477 @@
+/* 自定义样式 - Onism's Blog - 人像摄影美学风格 */
+
+:root {
+  /* 主色调 - 硬朗男性化色系 */
+  --primary-color: #0ea5e9;
+  --secondary-color: #1e293b;
+  --accent-color: #f59e0b;
+  --dark-slate: #0f172a;
+  --light-slate: #e2e8f0;
+  --steel-gray: #64748b;
+  --gradient-main: linear-gradient(135deg, #0ea5e9, #1e293b, #f59e0b);
+  --gradient-soft: linear-gradient(45deg, #f8fafc, #e2e8f0);
+  --text-elegant: #1e293b;
+  --bg-glass: rgba(14, 165, 233, 0.06);
+}
+
+/* 全局动画效果 - 优化性能 */
+a, button, .btn, .recent-post-item, .card-widget {
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 页面加载动画 - 简化版本 */
+body {
+  animation: simpleFadeIn 0.6s ease-out;
+  background: var(--gradient-soft);
+}
+
+@keyframes simpleFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 卡片悬停效果 - 硬朗男性化风格 */
+.recent-post-item {
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-glass);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  box-shadow: 0 2px 8px rgba(30, 41, 59, 0.1);
+  will-change: transform;
+}
+
+.recent-post-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(14, 165, 233, 0.2);
+  border-color: var(--primary-color);
+}
+
+/* 头像 - 硬朗风格 */
+.avatar-img {
+  border-radius: 50%;
+  border: 3px solid var(--primary-color);
+  box-shadow: 0 0 15px rgba(14, 165, 233, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avatar-img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
+}
+
+/* 导航栏 - 完全透明风格 */
+#nav {
+  background: transparent !important;
+  backdrop-filter: none;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+#nav .nav-link {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+#nav .nav-link:hover {
+  color: var(--primary-color);
+  background: rgba(59, 130, 246, 0.1);
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
+  transform: translateY(-1px);
+}
+
+/* 按钮 - 硬朗男性化风格 */
+.btn, button {
+  position: relative;
+  overflow: hidden;
+  background: var(--gradient-main);
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px 24px;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
+
+.btn:hover, button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.4);
+  border-color: var(--accent-color);
+}
+
+.btn::before, button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.4), transparent);
+  transition: left 0.4s ease;
+}
+
+.btn:hover::before, button:hover::before {
+  left: 100%;
+}
+
+/* 文章标题 - 优雅渐变 */
+.post-title {
+  background: var(--gradient-main);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: elegantGradient 10s ease infinite;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+@keyframes elegantGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 标签云 - 现代风格 */
+.tag-cloud a {
+  transition: all 0.3s ease;
+  border-radius: 20px;
+  padding: 6px 14px;
+  margin: 4px;
+  display: inline-block;
+  background: var(--bg-glass);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  color: var(--text-elegant);
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  font-size: 0.9em;
+}
+
+.tag-cloud a:hover {
+  transform: scale(1.05) translateY(-1px);
+  box-shadow: 0 6px 15px rgba(59, 130, 246, 0.2);
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* 滚动条 - 现代风格 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--soft-gray);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-main);
+  border-radius: 10px;
+  border: 1px solid var(--soft-gray);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
+}
+
+/* 代码块 - 现代风格 */
+.highlight {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.1);
+  position: relative;
+  background: var(--bg-glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.highlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: var(--gradient-main);
+  opacity: 0.95;
+}
+
+.highlight::after {
+  content: '● ● ●';
+  position: absolute;
+  top: 6px;
+  left: 12px;
+  color: white;
+  font-size: 11px;
+  z-index: 1;
+}
+
+/* 引用块 - 现代风格 */
+blockquote {
+  border-left: 4px solid var(--primary-color);
+  background: var(--bg-glass);
+  backdrop-filter: blur(10px);
+  border-radius: 0 12px 12px 0;
+  position: relative;
+  padding: 16px 20px;
+  margin: 16px 0;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.1);
+}
+
+blockquote::before {
+  content: '"';
+  font-size: 4em;
+  color: var(--primary-color);
+  position: absolute;
+  top: -15px;
+  left: 12px;
+  opacity: 0.25;
+  font-family: serif;
+}
+
+/* 右下角按钮组完全透明 - 彻底移除所有背景和容器样式 */
+#rightside {
+  background: transparent !important;
+}
+
+/* 覆盖主题默认的按钮容器样式 */
+#rightside > div {
+  background: transparent !important;
+}
+
+/* 彻底覆盖所有按钮和链接的默认样式 */
+#rightside > div > button,
+#rightside > div > a,
+.rightside-item {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 5px !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: auto !important;
+  min-height: auto !important;
+  outline: none !important;
+}
+
+/* 悬停状态也保持透明 */
+#rightside > div > button:hover,
+#rightside > div > a:hover,
+.rightside-item:hover {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: scale(1.1);
+}
+
+/* 移除伪元素 */
+#rightside > div > button::before,
+#rightside > div > a::before,
+#rightside > div > button::after,
+#rightside > div > a::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* 图标样式 */
+#rightside > div > button i,
+#rightside > div > a i,
+.rightside-item i {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-size: 20px !important;
+  transition: all 0.3s ease;
+  display: inline-block !important;
+  width: auto !important;
+  height: auto !important;
+  line-height: normal !important;
+  vertical-align: baseline !important;
+}
+
+/* 图标悬停效果 */
+#rightside > div > button:hover i,
+#rightside > div > a:hover i,
+.rightside-item:hover i {
+  color: var(--primary-color) !important;
+  text-shadow: 0 0 10px var(--primary-color), 2px 2px 4px rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+/* 强力覆盖任何可能的背景色和主题色 */
+#rightside * {
+  background-color: transparent !important;
+  background-image: none !important;
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+/* 覆盖CSS变量可能设置的背景色 */
+#rightside > div > button,
+#rightside > div > a {
+  --btn-bg: transparent !important;
+  --btn-color: transparent !important;
+  --btn-hover-color: transparent !important;
+  --card-bg: transparent !important;
+  --sidebar-bg: transparent !important;
+}
+
+/* 底部版权信息透明化 */
+#footer {
+  position: relative;
+  overflow: hidden;
+  background: transparent !important;
+}
+
+#footer-wrap {
+  background: transparent !important;
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(14, 165, 233, 0.1);
+}
+
+#footer .footer-inner {
+  background: transparent !important;
+}
+
+#footer .copyright {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  font-weight: 500;
+}
+
+#footer .copyright a {
+  color: var(--primary-color) !important;
+  text-shadow: 0 0 5px rgba(14, 165, 233, 0.5);
+}
+
+/* 移除复杂的页脚波浪效果，保持简洁 */
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+  .recent-post-item:hover {
+    transform: none;
+  }
+  
+  .avatar-img {
+    animation: breathe 2s ease-in-out infinite;
+  }
+}
+
+/* 暗色模式适配 */
+[data-theme="dark"] #nav {
+  background: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .recent-post-item:hover {
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+}
+
+/* 打字机光标效果 */
+.typed-cursor {
+  color: #ff6b6b;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+/* 加载动画增强 */
+.loading-bg {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+  background-size: 400% 400%;
+  animation: gradient 3s ease infinite;
+}
+
+/* 侧边栏卡片动画 */
+.card-widget {
+  transition: all 0.3s ease;
+}
+
+.card-widget:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* 文章目录悬停效果 */
+.toc-link {
+  transition: all 0.3s ease;
+  border-left: 2px solid transparent;
+}
+
+.toc-link:hover {
+  border-left-color: #ff6b6b;
+  padding-left: 8px;
+}
+
+.toc-link.active {
+  border-left-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* 移除所有爱心相关效果 */
+.heart, .love, [class*="heart"], [class*="love"] {
+  display: none !important;
+}
+
+/* 禁用任何爱心动画 */
+@keyframes heartbeat, heart-beat, love-beat {
+  0%, 100% { display: none !important; }
+}
+
+/* 自定义点击效果 - 硬核科技风格 */
+.click-effect {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-shadow: 0 0 8px var(--primary-color);
+  animation: techClickEffect 1.2s ease-out forwards;
+}
+
+@keyframes techClickEffect {
+  0% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.2) rotate(90deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5) rotate(180deg) translateY(-50px);
+  }
+}
