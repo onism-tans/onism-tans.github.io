@@ -2,9 +2,7 @@ name: Deploy Hexo Blog to GitHub Pages
 
 on:
   push:
-    branches: [ main, source ]  # 支持从main或source分支部署
-  pull_request:
-    branches: [ main ]
+    branches: [ main ]  # 当推送到main分支时触发部署
 
 permissions:
   contents: write
@@ -43,7 +41,7 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./public
-        publish_branch: main
+        publish_branch: gh-pages
         commit_message: 'Deploy: ${{ github.event.head_commit.message }}'
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
