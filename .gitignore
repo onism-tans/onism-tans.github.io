@@ -2,9 +2,12 @@
 .DS_Store
 Thumbs.db
 *.log
-node_modules/
-public/
 .deploy*/
+
+# 注意：不再忽略这些重要文件
+# db.json - Hexo数据库，包含文章信息
+# node_modules/ - 依赖包，GitHub Actions需要
+# public/ - 生成的静态文件
 
 # 编辑器和IDE
 .vscode/
